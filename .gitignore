@@ -1,0 +1,42 @@
+# Gradle
+/.gradle
+build/
+
+# Classes and other generated files
+out/
+
+# Intellij
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Mac
+.DS_Store
+
+# Travis
+/.dpl
+
+# Maven
+log/
+target/
+
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
+
+# logging
+logs/
+*.log
+
+# packed artifacts
+*.zip
+*.tar.gz
+
+out/
+
+# emacs
+\#*
+*~
+*.swp

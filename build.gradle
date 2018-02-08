@@ -1,0 +1,50 @@
+group 'org.springframework.sample'
+
+buildscript {
+    repositories {
+	mavenCentral()
+	maven {
+	    url 'https://repo.spring.io/milestone'
+	}
+	maven {
+	    url 'https://repo.spring.io/snapshot' 
+	}
+
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.0.M7"
+    }
+}
+
+version '1.0-SNAPSHOT'
+
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'https://repo.spring.io/milestone'
+    }
+    maven {
+	url 'https://repo.spring.io/snapshot' 
+    }
+
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencyManagement {
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-sleuth:2.0.0.BUILD-SNAPSHOT'
+    }
+}
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter-webflux'
+    compile 'org.springframework.cloud:spring-cloud-starter-sleuth'
+}

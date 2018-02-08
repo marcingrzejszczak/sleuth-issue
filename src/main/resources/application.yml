@@ -1,0 +1,6 @@
+logging:
+  level:
+    root: INFO
+    org.springframework.cloud: TRACE
+    org.hibernate.SQL: DEBUG
+    io.netty.util.internal: ERROR
