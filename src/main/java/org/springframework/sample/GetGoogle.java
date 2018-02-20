@@ -13,9 +13,13 @@ public class GetGoogle {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(GetGoogle.class);
 
-    private WebClient webClient = WebClient.create("http://google.de");
+    private final WebClient webClient;
 
-     public Mono<String> get(Integer someParameterNotUsedNow){
+    public GetGoogle(WebClient webClient) {
+        this.webClient = webClient;
+    }
+
+    public Mono<String> get(Integer someParameterNotUsedNow){
         LOGGER.info("getting for paramtere {}", someParameterNotUsedNow);
         return webClient
                 .method(HttpMethod.GET)
